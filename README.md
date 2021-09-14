@@ -4,7 +4,7 @@ A new Flutter project.
 
 ## Getting Started
 
-My goal: The Developed this app using News Rest API with GetX state manegement. 
+My goal: I Developed this app using News Rest API with GetX state manegement. 
 
 A few resources to get you started if this is your first Flutter project:
 
