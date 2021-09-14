@@ -1,10 +1,10 @@
-# news_x_test
+# news_x_
 
 A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+My goal: The Developed this app using News Rest API with GetX state manegement. 
 
 A few resources to get you started if this is your first Flutter project:
 
