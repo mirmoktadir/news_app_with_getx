@@ -13,8 +13,7 @@ class NewsX extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'News X',
       theme: ThemeData(
-        primaryColor: Colors.white,
-        accentColor: Colors.red,
+        primaryColor: Colors.white, colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red,),
       ),
       home: HomeScreen(),
     );
