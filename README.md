@@ -1,6 +1,6 @@
 # NewsX
 
-A Flutter News App .
+A Flutter News App [Null Safety] .
 
 ## Getting Started
 
