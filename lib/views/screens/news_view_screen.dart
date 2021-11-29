@@ -3,13 +3,13 @@ import 'package:news_x_test/models/news_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NewsViewScreen extends StatelessWidget {
-  final DateTime date;
-  final String imageUrl;
-  final String title;
-  final String description;
-  final String author;
-  final Id id;
-  final String url;
+  final DateTime? date;
+  final String? imageUrl;
+  final String? title;
+  final String? description;
+  final String? author;
+  final Id? id;
+  final String? url;
   NewsViewScreen(
       {this.date,
       this.imageUrl,
@@ -60,7 +60,7 @@ class NewsViewScreen extends StatelessWidget {
                   height: 220,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage(imageUrl),
+                      image: NetworkImage(imageUrl!),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -69,7 +69,7 @@ class NewsViewScreen extends StatelessWidget {
                   height: 15,
                 ),
                 Text(
-                  title,
+                  title!,
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
@@ -81,7 +81,7 @@ class NewsViewScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Text(
-                  description,
+                  description!,
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 20,
@@ -130,7 +130,7 @@ class NewsViewScreen extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        customLaunch(url);
+                        customLaunch(url!);
                         //_lunchUrl();
                       },
                     ),

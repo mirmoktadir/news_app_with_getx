@@ -15,9 +15,9 @@ class NewsModel {
     this.articles,
   });
 
-  String status;
-  int totalResults;
-  List<Article> articles;
+  String? status;
+  int? totalResults;
+  List<Article>? articles;
 
   factory NewsModel.fromJson(Map<String, dynamic> json) => NewsModel(
         status: json["status"],
@@ -29,7 +29,7 @@ class NewsModel {
   Map<String, dynamic> toJson() => {
         "status": status,
         "totalResults": totalResults,
-        "articles": List<dynamic>.from(articles.map((x) => x.toJson())),
+        "articles": List<dynamic>.from(articles!.map((x) => x.toJson())),
       };
 }
 
@@ -45,14 +45,14 @@ class Article {
     this.content,
   });
 
-  Source source;
-  String author;
-  String title;
-  String description;
-  String url;
-  String urlToImage;
-  DateTime publishedAt;
-  String content;
+  Source? source;
+  String? author;
+  String? title;
+  String? description;
+  String? url;
+  String? urlToImage;
+  DateTime? publishedAt;
+  String? content;
 
   factory Article.fromJson(Map<String, dynamic> json) => Article(
         source: Source.fromJson(json["source"]),
@@ -66,13 +66,13 @@ class Article {
       );
 
   Map<String, dynamic> toJson() => {
-        "source": source.toJson(),
+        "source": source!.toJson(),
         "author": author,
         "title": title,
         "description": description,
         "url": url,
         "urlToImage": urlToImage,
-        "publishedAt": publishedAt.toIso8601String(),
+        "publishedAt": publishedAt!.toIso8601String(),
         "content": content,
       };
 }
@@ -83,8 +83,8 @@ class Source {
     this.name,
   });
 
-  Id id;
-  Name name;
+  Id? id;
+  Name? name;
 
   factory Source.fromJson(Map<String, dynamic> json) => Source(
         id: idValues.map[json["id"]],
@@ -92,8 +92,8 @@ class Source {
       );
 
   Map<String, dynamic> toJson() => {
-        "id": idValues.reverse[id],
-        "name": nameValues.reverse[name],
+        "id": idValues.reverse![id!],
+        "name": nameValues.reverse![name!],
       };
 }
 
@@ -109,11 +109,11 @@ final nameValues =
 
 class EnumValues<T> {
   Map<String, T> map;
-  Map<T, String> reverseMap;
+  Map<T, String>? reverseMap;
 
   EnumValues(this.map);
 
-  Map<T, String> get reverse {
+  Map<T, String>? get reverse {
     if (reverseMap == null) {
       reverseMap = map.map((k, v) => new MapEntry(v, k));
     }

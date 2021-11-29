@@ -4,7 +4,7 @@ import 'package:news_x_test/models/news_model.dart';
 import 'package:news_x_test/views/screens/news_view_screen.dart';
 
 class NewsCard extends StatelessWidget {
-  final Article article;
+  final Article? article;
   NewsCard({this.article});
 
   @override
@@ -14,13 +14,13 @@ class NewsCard extends StatelessWidget {
       child: GestureDetector(
         onTap: () async {
           await Get.to(NewsViewScreen(
-            date: article.publishedAt,
-            imageUrl: article.urlToImage,
-            title: article.title,
-            description: article.description,
-            author: article.author,
-            id: article.source.id,
-            url: article.url,
+            date: article!.publishedAt,
+            imageUrl: article!.urlToImage,
+            title: article!.title,
+            description: article!.description,
+            author: article!.author,
+            id: article!.source!.id,
+            url: article!.url,
           ));
         },
         child: Container(
@@ -33,7 +33,7 @@ class NewsCard extends StatelessWidget {
                 width: 110,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage(article.urlToImage),
+                    image: NetworkImage(article!.urlToImage!),
                     fit: BoxFit.cover,
                   ),
                   borderRadius: BorderRadius.circular(30),
@@ -51,7 +51,7 @@ class NewsCard extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        article.title,
+                        article!.title!,
                         maxLines: 3,
                         style: TextStyle(
                           color: Colors.red[400],
@@ -65,7 +65,7 @@ class NewsCard extends StatelessWidget {
                       ),
                       Expanded(
                         child: Text(
-                          article.description,
+                          article!.description!,
                           maxLines: 2,
                           style: TextStyle(
                             fontSize: 20,

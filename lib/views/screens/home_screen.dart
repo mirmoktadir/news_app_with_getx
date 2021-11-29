@@ -10,7 +10,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future<bool> showExitPopup() async {
-      return await showDialog(
+      return await (showDialog(
             context: context,
             builder: (context) => AlertDialog(
               title: Text('Exit App'),
@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-          ) ??
+          ) as FutureOr<bool>?) ??
           false;
     }
 

@@ -4,7 +4,7 @@ import 'package:news_x_test/models/news_model.dart';
 
 class ApiServices {
   static var client = http.Client();
-  static Future<NewsModel> fetchNews() async {
+  static Future<NewsModel?> fetchNews() async {
     var response = await client.get(
       Uri.parse(ApiUrl.apiLink),
     );

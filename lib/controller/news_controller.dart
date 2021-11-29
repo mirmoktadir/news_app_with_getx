@@ -15,7 +15,7 @@ class NewsController extends GetxController {
     try {
       var news = await ApiServices.fetchNews();
       if (news != null) {
-        articles.value = news.articles;
+        articles.value = news.articles!;
       }
     } finally {
       isLoading(false);
