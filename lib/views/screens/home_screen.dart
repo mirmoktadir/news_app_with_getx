@@ -57,7 +57,7 @@ class HomeScreen extends StatelessWidget {
 
   Future<Null> _onRefresh() {
     Completer<Null> completer = new Completer<Null>();
-    Timer timer = new Timer(new Duration(seconds: 3), () {
+     Timer(new Duration(seconds: 3), () {
       completer.complete();
     });
     return completer.future;
